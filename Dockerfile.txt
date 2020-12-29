@@ -1,0 +1,3 @@
+FROM openjdk:8-jre-alpine
+COPY ./target/*.jar /app.jar
+ENTRYPOINT java -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -XX:MaxRAMFraction=1 -XshowSettings:vm -jar /app.jar
